@@ -61,13 +61,14 @@ def move_to_next_line(size, img, ratio):
     turtle.pendown()
 
 wn = turtle.Screen()
-wn.tracer(0)
+#wn.tracer(0)
+turtle.speed('fastest')
 
 up = True
 turtle.radians()
 turtle.hideturtle()
 # read image
-img = Image.open('image1.jpeg').convert('L')
+img = Image.open('image9.jpg').convert('L')
 img.show()
 
 turtle.penup()
@@ -75,12 +76,12 @@ turtle.goto(-800, 300)
 turtle.pendown()
 
 size = 10
-ratio = 700 / max(img.height, img.width)
+ratio = 900 / max(img.height, img.width)
 for i in range(img.height // size):
     up = True
     for j in range(img.width // size):
         square(to_bounces(get_color(i, j, size)), size*ratio)
     move_to_next_line(size, img, ratio)
 
-wn.update()
+#wn.update()
 wn.mainloop()
